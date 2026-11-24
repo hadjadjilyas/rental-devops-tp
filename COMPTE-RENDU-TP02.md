@@ -24,3 +24,8 @@ Les deux exécutions sur `main` ont réussi : [Java](https://github.com/hadjadji
 - Dans le [SBOM Python](https://github.com/hadjadjilyas/rental-devops-tp/actions/runs/45405161611/artifacts/14926340947) : `libc6 2.41-12+deb13u4` (système) et `fastapi 0.162.7` (application).
 - Digest Java vérifié : `sha256:af539aecb660de889c448b5bed351700b1b809c3714a828763d04f81fb5b4b93`. Son identité est le workflow `ci-car-rental.yml` sur `main` ; le [SBOM Java](https://github.com/hadjadjilyas/rental-devops-tp/actions/runs/45405161671/artifacts/14925296370) est téléchargeable.
 - [Résultats Trivy sur main](https://github.com/hadjadjilyas/rental-devops-tp/security/code-scanning?query=is%3Aopen+branch%3Amain+tool%3ATrivy) : des vulnérabilités ont été signalées, dont des alertes élevées sur Tomcat. La réussite du job signifie que l'analyse a été transmise ; elle ne signifie pas que les images sont exemptes de vulnérabilités.
+## Inventaire initial des références
+
+Au checkpoint `01-ci`, toutes les références suivantes étaient **mutables** : `actions/checkout@v6`, `actions/setup-java@v6`, `actions/setup-python@v7`, `actions/upload-artifact@v7`, `docker/setup-buildx-action@v4`, `docker/login-action@v4`, `docker/metadata-action@v6`, `docker/build-push-action@v7`, `aquasecurity/trivy-action@master`, `github/codeql-action/upload-sarif@v4` et `gitleaks/gitleaks-action@v3`. Les mêmes actions apparaissent plusieurs fois dans les workflows.
+
+Les trois instructions initiales `FROM` utilisaient aussi des tags mutables : `gradle:8.14-jdk17`, `eclipse-temurin:17-jre-jammy` et `python:3.12-slim`. Les références actuelles ajoutent respectivement un SHA de commit complet ou un digest d'image SHA-256.
