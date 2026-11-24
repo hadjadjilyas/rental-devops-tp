@@ -17,3 +17,9 @@ Supprimer une ligne supprime seulement son contenu de la version courante ; un v
 - Après validation de l'enseignant, configurer les sept contrôles obligatoires et vérifier les PR rouge et verte.
 
 Ces observations et réglages distants n'ont pas encore été effectués.
+
+## Expérience GitHub
+
+La [PR brouillon d'expérience](https://github.com/hadjadjilyas/rental-devops-tp/pull/3) a déclenché une [exécution volontairement rouge](https://github.com/hadjadjilyas/rental-devops-tp/actions/runs/45404549653) : Python quality a fini en échec après 8 s et Python tests après 17 s ; les deux s'exécutent en parallèle, et la construction Docker a été ignorée. Le test signale `assert 180.0 == 181.0` à `tests/test_pricing.py:10`. L'artefact structuré `python-test-reports` est resté disponible après échec. La durée totale affichée est 20 s. Le commit suivant restaure l'assertion.
+
+Les sept contrôles de la [PR de rendu](https://github.com/hadjadjilyas/rental-devops-tp/pull/1) ont réussi sur l'exécution initiale. La protection de branche reste conditionnée à la validation de l'enseignant et l'expérience Gitleaks à sa valeur factice.
