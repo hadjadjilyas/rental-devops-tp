@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
   pull_request:
-    branches: [main]
+    branches: [main, 'base/00-starter']
   workflow_dispatch:
 
 concurrency:
