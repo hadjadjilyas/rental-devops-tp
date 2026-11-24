@@ -1,4 +1,4 @@
-﻿# TP 01 — compte rendu
+# TP 01 — compte rendu
 
 Les configurations de ce TP sont reprises du corrigé officiel `checkpoint/01-ci` ; la branche part de `checkpoint/00-starter`.
 
@@ -12,7 +12,7 @@ Supprimer une ligne supprime seulement son contenu de la version courante ; un v
 
 ## À vérifier sur GitHub
 
-- Ouvrir une PR brouillon et documenter le premier échec, la ligne responsable, le délai et l'artefact. Les deux commits d'échec puis de restauration restent à réaliser.
+- Ouvrir une PR brouillon et documenter le premier échec, la ligne responsable, le délai et l'artefact. Les deux commits d'échec et de restauration ont été créés ; localement, Pytest affiche `180.0 == 181.0` à la ligne 10.
 - Vérifier la disponibilité d'un rapport lors d'un échec et tester Gitleaks avec la seule valeur factice fournie par l'enseignant.
 - Après validation de l'enseignant, configurer les sept contrôles obligatoires et vérifier les PR rouge et verte.
 
