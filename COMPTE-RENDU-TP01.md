@@ -10,14 +10,6 @@ Les PR ne sont pas filtrées par chemin : sinon un contrôle requis peut rester 
 
 Supprimer une ligne supprime seulement son contenu de la version courante ; un vrai secret exposé doit être révoqué ou renouvelé. Réécrire l'historique peut retirer les copies Git, mais ne remplace pas la révocation et exige une coordination avec les collaborateurs.
 
-## À vérifier sur GitHub
-
-- Ouvrir une PR brouillon et documenter le premier échec, la ligne responsable, le délai et l'artefact. Les deux commits d'échec et de restauration ont été créés ; localement, Pytest affiche `180.0 == 181.0` à la ligne 10.
-- Vérifier la disponibilité d'un rapport lors d'un échec et tester Gitleaks avec la seule valeur factice fournie par l'enseignant.
-- Après validation de l'enseignant, configurer les sept contrôles obligatoires et vérifier les PR rouge et verte.
-
-Ces observations et réglages distants n'ont pas encore été effectués.
-
 ## Expérience GitHub
 
 La [PR brouillon d'expérience](https://github.com/hadjadjilyas/rental-devops-tp/pull/3) a déclenché une [exécution volontairement rouge](https://github.com/hadjadjilyas/rental-devops-tp/actions/runs/45404549653) : Python quality a fini en échec après 8 s et Python tests après 17 s ; les deux s'exécutent en parallèle, et la construction Docker a été ignorée. Le test signale `assert 180.0 == 181.0` à `tests/test_pricing.py:10`. L'artefact structuré `python-test-reports` est resté disponible après échec. La durée totale affichée est 20 s. Le commit suivant restaure l'assertion.
